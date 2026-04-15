@@ -81,7 +81,7 @@ class _AccountsPageState extends State<AccountsPage> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.18),
+                  color: Colors.white.withValues(alpha: 0.18),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -324,10 +324,10 @@ class _ClientCardState extends State<_ClientCard>
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: typeColor.withOpacity(0.12),
+                              color: typeColor.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
-                                  color: typeColor.withOpacity(0.4), width: 1),
+                                  color: typeColor.withValues(alpha: 0.4), width: 1),
                             ),
                             child: Text(c.type.label,
                                 style: TextStyle(

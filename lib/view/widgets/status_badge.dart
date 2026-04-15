@@ -20,12 +20,12 @@ class StatusBadge extends StatelessWidget {
       decoration: BoxDecoration(
         color: isEnAttente
             ? AppColors.statusEnAttente
-            : status.badgeColor.withOpacity(0.13),
+            : status.badgeColor.withValues(alpha: 0.13),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: isEnAttente
-              ? AppColors.statusEnAttenteText.withOpacity(0.4)
-              : status.badgeColor.withOpacity(0.5),
+              ? AppColors.statusEnAttenteText.withValues(alpha: 0.4)
+              : status.badgeColor.withValues(alpha: 0.5),
           width: 1,
         ),
       ),

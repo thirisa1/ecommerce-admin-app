@@ -100,6 +100,7 @@ class _AddProductPageState extends State<AddProductPage> {
       widget.onProductAdded(newProduct);
 
       setState(() => _isLoading = false);
+      if (!mounted) return;
       Navigator.pop(context);
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -313,7 +314,7 @@ class _AddProductPageState extends State<AddProductPage> {
           color:
               _selectedCategory != null
                   ? AppColors.accent
-                  : AppColors.textHint.withOpacity(0.4),
+                  : AppColors.textHint.withValues(alpha: 0.4),
           width: 1.5,
         ),
       ),
@@ -420,7 +421,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   decoration: BoxDecoration(
                     color:
                         isSelected
-                            ? color.withOpacity(0.12)
+                            ? color.withValues(alpha: 0.12)
                             : AppColors.surface,
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(
@@ -431,7 +432,7 @@ class _AddProductPageState extends State<AddProductPage> {
                         isSelected
                             ? [
                               BoxShadow(
-                                color: color.withOpacity(0.2),
+                                color: color.withValues(alpha: 0.2),
                                 blurRadius: 8,
                                 offset: const Offset(0, 3),
                               ),
@@ -540,7 +541,7 @@ class _AddProductPageState extends State<AddProductPage> {
               borderRadius: BorderRadius.circular(16),
             ),
             elevation: 0,
-            disabledBackgroundColor: AppColors.primary.withOpacity(0.5),
+            disabledBackgroundColor: AppColors.primary.withValues(alpha: 0.5),
           ),
           child:
               _isLoading

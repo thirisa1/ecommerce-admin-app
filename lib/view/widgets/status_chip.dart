@@ -20,12 +20,13 @@ class StatusChip extends StatelessWidget {
       margin: const EdgeInsets.only(right: 10),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
       decoration: BoxDecoration(
-        color: status.badgeColor.withOpacity(isEnAttente ? 1 : 0.12),
+        color: status.badgeColor.withValues(alpha: isEnAttente ? 1 : 0.12),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isEnAttente
-              ? AppColors.statusEnAttenteText.withOpacity(0.3)
-              : status.badgeColor.withOpacity(0.4),
+          color:
+              isEnAttente
+                  ? AppColors.statusEnAttenteText.withValues(alpha: 0.3)
+                  : status.badgeColor.withValues(alpha: 0.4),
           width: 1,
         ),
       ),
@@ -35,9 +36,8 @@ class StatusChip extends StatelessWidget {
           Icon(
             status.icon,
             size: 13,
-            color: isEnAttente
-                ? AppColors.statusEnAttenteText
-                : status.badgeColor,
+            color:
+                isEnAttente ? AppColors.statusEnAttenteText : status.badgeColor,
           ),
           const SizedBox(width: 5),
           Text(
@@ -45,9 +45,10 @@ class StatusChip extends StatelessWidget {
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w600,
-              color: isEnAttente
-                  ? AppColors.statusEnAttenteText
-                  : status.badgeColor,
+              color:
+                  isEnAttente
+                      ? AppColors.statusEnAttenteText
+                      : status.badgeColor,
             ),
           ),
         ],

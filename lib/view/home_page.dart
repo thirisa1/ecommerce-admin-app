@@ -209,10 +209,10 @@ class _HomeTabState extends State<_HomeTab> {
             padding: const EdgeInsets.all(10),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.18),
+                color: Colors.white.withValues(alpha: 0.18),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withValues(alpha: 0.3),
                   width: 1,
                 ),
               ),
@@ -251,7 +251,7 @@ class _HomeTabState extends State<_HomeTab> {
               Text(
                 'Médico-Dentaire',
                 style: TextStyle(
-                  color: AppColors.accent.withOpacity(0.9),
+                  color: AppColors.accent.withValues(alpha: 0.9),
                   fontWeight: FontWeight.w400,
                   fontSize: 10,
                   letterSpacing: 1.5,
@@ -267,7 +267,7 @@ class _HomeTabState extends State<_HomeTab> {
                 icon: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
+                    color: Colors.white.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Icon(
