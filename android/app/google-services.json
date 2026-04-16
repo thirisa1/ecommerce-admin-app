@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "850211718490",
+    "project_id": "mts-dentaire",
+    "storage_bucket": "mts-dentaire.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850211718490:android:552fd1842e1e71400b5f63",
+        "android_client_info": {
+          "package_name": "com.example.mts_medico_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyJfj0-QAWgUDZOKaESrveNGNYHZBnaMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
