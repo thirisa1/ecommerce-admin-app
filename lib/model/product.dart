@@ -74,6 +74,7 @@ class Product {
   final double price;
   final String description;
   final List<BuyerType> allowedBuyers;
+  final String? imagePath; // chemin local ou URL de la photo
 
   const Product({
     required this.id,
@@ -84,6 +85,7 @@ class Product {
     required this.price,
     required this.description,
     required this.allowedBuyers,
+    this.imagePath,
   });
 }
 

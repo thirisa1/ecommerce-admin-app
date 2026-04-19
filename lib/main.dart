@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'theme/colors.dart';
 import 'theme/theme_provider.dart';
 import 'view/home_page.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light,
-  ));
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
+
   runApp(const MonComptoirApp());
 }
 
@@ -21,7 +29,6 @@ class MonComptoirApp extends StatefulWidget {
 }
 
 class _MonComptoirAppState extends State<MonComptoirApp> {
-
   void _onThemeChanged() => setState(() {});
 
   @override
@@ -38,9 +45,6 @@ class _MonComptoirAppState extends State<MonComptoirApp> {
 
   @override
   Widget build(BuildContext context) {
-    // La ValueKey force Flutter à reconstruire
-    // complètement HomePage quand le thème change,
-    // ce qui fait relire tous les AppColors.xxx getters.
     final themeKey = ValueKey(themeProvider.isDark);
 
     return MaterialApp(
@@ -48,7 +52,6 @@ class _MonComptoirAppState extends State<MonComptoirApp> {
       debugShowCheckedModeBanner: false,
       themeMode: themeProvider.mode,
 
-      // ── Thème Light ──
       theme: ThemeData(
         brightness: Brightness.light,
         colorScheme: ColorScheme.fromSeed(
@@ -62,7 +65,6 @@ class _MonComptoirAppState extends State<MonComptoirApp> {
         dividerColor: const Color(0xFFE8EEF8),
       ),
 
-      // ── Thème Dark ──
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(
@@ -76,9 +78,8 @@ class _MonComptoirAppState extends State<MonComptoirApp> {
         dividerColor: const Color(0xFF1E2535),
       ),
 
-      // ValueKey force la reconstruction complète
-      // de l'arbre quand le thème bascule
       home: HomePage(key: themeKey),
     );
   }
 }
+ 
