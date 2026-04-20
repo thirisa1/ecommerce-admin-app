@@ -25,24 +25,42 @@ enum ProductCategory {
 extension ProductCategoryLabel on ProductCategory {
   String get label {
     switch (this) {
-      case ProductCategory.anesthesieDentaire:  return 'Anesthésie dentaire';
-      case ProductCategory.blanchiment:         return 'Blanchiment';
-      case ProductCategory.boucheProthese:      return 'Bouche (prothèse)';
-      case ProductCategory.chirurgie:           return 'Chirurgie';
-      case ProductCategory.detartrage:          return 'Détartrage & Polissage';
-      case ProductCategory.endodontie:          return 'Endodontie';
-      case ProductCategory.fraises:             return 'Fraises';
-      case ProductCategory.hygieneDesinfection: return 'Hygiène & Désinfection';
-      case ProductCategory.instruments:         return 'Instruments';
-      case ProductCategory.materiel:            return 'Matériel';
-      case ProductCategory.orthodontie:         return 'Orthodontie';
-      case ProductCategory.parapharmacie:       return 'Parapharmacie';
-      case ProductCategory.prothese:            return 'Prothèse';
-      case ProductCategory.restauration:        return 'Restauration';
-      case ProductCategory.scellement:          return 'Scellement';
-      case ProductCategory.tenon:               return 'Tenon';
-      case ProductCategory.usageUnique:         return 'Usage unique';
-      case ProductCategory.medical:             return 'Médical';
+      case ProductCategory.anesthesieDentaire:
+        return 'Anesthésie dentaire';
+      case ProductCategory.blanchiment:
+        return 'Blanchiment';
+      case ProductCategory.boucheProthese:
+        return 'Bouche (prothèse)';
+      case ProductCategory.chirurgie:
+        return 'Chirurgie';
+      case ProductCategory.detartrage:
+        return 'Détartrage & Polissage';
+      case ProductCategory.endodontie:
+        return 'Endodontie';
+      case ProductCategory.fraises:
+        return 'Fraises';
+      case ProductCategory.hygieneDesinfection:
+        return 'Hygiène & Désinfection';
+      case ProductCategory.instruments:
+        return 'Instruments';
+      case ProductCategory.materiel:
+        return 'Matériel';
+      case ProductCategory.orthodontie:
+        return 'Orthodontie';
+      case ProductCategory.parapharmacie:
+        return 'Parapharmacie';
+      case ProductCategory.prothese:
+        return 'Prothèse';
+      case ProductCategory.restauration:
+        return 'Restauration';
+      case ProductCategory.scellement:
+        return 'Scellement';
+      case ProductCategory.tenon:
+        return 'Tenon';
+      case ProductCategory.usageUnique:
+        return 'Usage unique';
+      case ProductCategory.medical:
+        return 'Médical';
     }
   }
 }
@@ -50,14 +68,15 @@ extension ProductCategoryLabel on ProductCategory {
 // ─────────────────────────────────────────────
 // Types d'acheteurs autorisés
 // ─────────────────────────────────────────────
-enum BuyerType { dentiste, prothesiste, autre }
+enum BuyerType { professionnel, autre }
 
 extension BuyerTypeLabel on BuyerType {
   String get label {
     switch (this) {
-      case BuyerType.dentiste:     return 'Dentiste';
-      case BuyerType.prothesiste:  return 'Prothésiste';
-      case BuyerType.autre:        return 'Autre';
+      case BuyerType.professionnel:
+        return 'Professionnel';
+      case BuyerType.autre:
+        return 'Autre';
     }
   }
 }

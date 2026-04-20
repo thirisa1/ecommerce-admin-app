@@ -410,8 +410,7 @@ class _ClientCardState extends State<_ClientCard>
 
   Color _typeColor(BuyerType type) {
     switch (type) {
-      case BuyerType.dentiste:    return AppColors.primary;
-      case BuyerType.prothesiste: return AppColors.accent;
+      case BuyerType.professionnel: return AppColors.accent;
       case BuyerType.autre:       return AppColors.green;
     }
   }
